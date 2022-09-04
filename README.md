@@ -1,6 +1,8 @@
 # Hugo Theme - podong
 A simple [Hugo](https://gohugo.io/) theme for blog.
 
+![screenshot](screenshot.png)
+
 ## Feature
 - Support Menu, categories, tags
 - Support Search
