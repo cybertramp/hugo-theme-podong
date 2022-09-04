@@ -1,0 +1,133 @@
+#fastSearch { 
+  visibility: hidden;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  display: inline-block;
+  width: 300px;
+}      
+
+#fastSearch input {
+  padding: 4px 10px;
+  width: 100%;
+  height: 31px;
+  font-size: 1.6em;
+  color: #aaa;
+  font-weight: bold;
+  background-color: #000;
+  border-radius: 3px 3px 0px 0px;
+  border: none;
+  outline: none;
+  text-align: left;
+  display: inline-block;
+}
+
+#searchResults li {
+  list-style: none;
+  margin-left: 0em;
+  background-color: #333;
+  border-bottom: 1px dotted #000;
+}
+#searchResults li .title {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+#searchResults {
+  visibility: inherit;
+  display: inline-block;
+  width: 320px;
+}
+#searchResults a {
+  text-decoration: none !important;
+  padding: 10px;
+  display: inline-block;
+}
+#searchResults a:hover,
+a:focus {
+  outline: 0;
+  background-color: #666;
+  color: #fff;
+}
+
+#searchBox {
+  width: 250px;
+  height: 10px;
+  margin: 0 auto;
+  padding-top: 12px;
+  float: right;
+  text-align: right;
+}
+
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.searchform {
+  margin: 0;
+}
+.searchform input {
+  width: 200px;
+  height: 30px;
+  padding: 10px;
+  line-height: 10px;
+  float: left;
+  border: 0;
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+}
+.searchform input:focus {
+  outline: 0;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
+}
+.searchform button {
+  overflow: visible;
+  position: relative;
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 30px;
+  width: 50px;
+  font: bold 12px/35px "lucida sans", "trebuchet MS", "Tahoma";
+  line-height: 30px;
+  color: #fff;
+  background: #31a2e2;
+  border-radius: 0 3px 3px 0;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.searchform button:hover {
+  background: #e54040;
+}
+.searchform button:active,
+.searchform button:focus {
+  background: #c42f2f;
+  outline: 0;
+}
+.searchform button:before {
+  content: "";
+  position: absolute;
+  border-width: 8px 8px 8px 0;
+  border-style: solid solid solid none;
+  border-color: transparent #31a2e2 transparent;
+  top: 8px;
+  left: -6px;
+}
+.searchform button:hover:before {
+  border-right-color: #e54040;
+}
+.searchform button:focus:before,
+.searchform button:active:before {
+  border-right-color: #c42f2f;
+}
+.searchform button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}

@@ -1,0 +1,28 @@
+{{ define "main" }} {{ $currentPage := . }}
+<main id="main" class="list">
+  <div class="container has-padding">
+    <h2>{{ .Title }}</h2>
+    {{ if ne $currentPage.RelPermalink "/posts/" }}
+    <!-- Not Post Menu -->
+    <ul class="list">
+      {{ $pageSize := site.Params.pageSize.list | default 10 }} {{ range
+      (.Paginator $pageSize).Pages }}
+      <li class="post">
+        <a href="{{ .Permalink}}" class="title">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ partial "pagination.html" . }} 
+    {{else}} 
+    <!-- Post Menu -->
+    {{ range (where site.RegularPages "Type" "in" site.Params.mainSections).GroupByDate "2006" }}
+    <h2 class="archive-title">{{ .Key }}</h2>
+    {{ range .Pages }}
+    <li class="post">
+      <time class="date">{{ .PublishDate.Format "2006-01-02" }}</time>
+      <a href="{{ .Permalink}}" class="title">{{ .Title }}</a>
+    </li>
+    {{ end }} {{ end }} {{ end }}
+  </div>
+</main>
+{{ end }}

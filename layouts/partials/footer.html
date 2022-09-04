@@ -1,0 +1,27 @@
+<footer id="footer">
+    <div class="container has-padding is-flex">
+      <ul class="links">
+        {{ range .Site.Menus.footer }}
+        <li>
+          {{ $targetURL := .URL | relURL }}
+          <a {{ if hasPrefix $targetURL "http" }}rel="nofollow" target="_blank"{{ end }} href="{{ .URL | relURL }}" title="{{ or .Title .Name }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+        <li>
+          <a
+            rel="nofollow"
+            target="_blank"
+            href="https://github.com/cybertramp/hugo-theme-podong"
+            title="using Hugo theme podong">
+            Theme Podong
+          </a>
+        </li>
+      </ul>
+      <div class="copyright">
+        {{ with .Site.Params.copyright }}
+          {{ . | safeHTML }} {{ else }} &copy; {{ now.Format "2006-01-02"}} {{ .Site.Title }}
+        {{ end }}
+      </div>
+    </div>
+  </footer>
+  
