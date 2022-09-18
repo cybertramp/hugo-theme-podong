@@ -16,15 +16,16 @@
     <!-- Post Menu -->
     {{ $pages := where .RegularPages "Section" "posts" }}
     <h2>{{ len $pages }} Posts</h2>
-
-    {{ range ($pages.ByParam "date").GroupByDate "2006" }}
-    <h2 class="archive-title">{{ .Key }}</h2>
-    {{ range .Pages }}
-    <li class="post">
-      <time class="date">{{ .PublishDate.Format "2006-01-02" }}</time>
-      <a href="{{ .Permalink}}" class="title">{{ .Title }}</a>
-    </li>
-    {{ end }} {{ end }} {{ end }}
+      {{ range ($pages.ByParam "date").GroupByDate "2006" }}
+      <h2 class="archive-title">{{ .Key }}</h2>
+        {{ range .Pages }}
+        <li class="post">
+          <time class="date">{{ .PublishDate.Format "2006-01-02" }}</time>
+          <a href="{{ .Permalink}}" class="title">{{ .Title }}</a>
+        </li>
+        {{ end }} 
+      {{ end }} 
+    {{ end }}
   </div>
 </main>
 {{ end }}
