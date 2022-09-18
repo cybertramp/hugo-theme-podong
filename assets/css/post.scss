@@ -6,12 +6,20 @@
 }
 
 .post {
+  a {
+    text-decoration: inherit;
+    color: inherit;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
   h1 {
     line-height: 1.3;
     word-wrap: break-word;
     word-break: break-word;
     margin-top: 0;
     margin-bottom: 12px;
+    color: black;
   }
   .content {
     hr {

@@ -4,10 +4,9 @@
     {{ $pageSize := site.Params.pageSize.index | default 5 }}
     {{ $showSection := false }}
     {{ if gt (len site.Params.mainSections) 1 }} {{ $showSection = true }} {{ end}}
-
-    {{ $paginator := .Paginate (where site.RegularPages "Section" "in" site.Params.mainSections) $pageSize }}
     <div class="article-list">
-      {{ range where .Site.RegularPages "Type" "posts" }}
+      {{ $pages := where .Site.RegularPages "Section" "posts" }}
+      {{ range ($pages.ByParam "date").Reverse }}
       <article class="post">
         <h3 class="title">
           <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
